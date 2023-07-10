@@ -76,7 +76,7 @@ function Profile() {
       </div>
       <div className=' flex justify-center w-full'>
 
-        <button ref={btnDown} className=' btn   hover:btn-primary  shadow-lg shadow-primary btn-circle  h-24 w-24  btn-secondary  animate-bounce ' onClick={handleClick}>
+        <button ref={btnDown} className=' btn    hover:btn-primary  shadow-lg shadow-primary btn-circle  h-24 w-24  btn-secondary  animate-bounce ' onClick={handleClick}>
           <FiChevronsDown size={100} />
         </button>
       </div>

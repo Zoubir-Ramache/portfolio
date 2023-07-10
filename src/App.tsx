@@ -1,40 +1,28 @@
 import { useEffect, useLayoutEffect, useRef } from "react"
 import { NavBar, Profile, MyProjects, ContactMe, AboutMe } from "./components"
 import { useStateContext } from "./Context/FirstProvider"
-import { gsap } from "gsap"
 
 
 function App() {
 
-  const { ActiveNavbar, setActiveNavbar , theme , setTheme  } = useStateContext()
+  const { ActiveNavbar, theme, setTheme, ActiveNavbarOnScroll } = useStateContext()
 
-  
 
-  useEffect(()=>{
 
-    const currentTheme= localStorage.getItem('theme')
-    setTheme(currentTheme || 'dark')
-  }, [])
   useEffect(() => {
-    const Myevent = () => {
-      const scrollPosition = window.pageYOffset
-      
-      if (scrollPosition > 400) {
-        setActiveNavbar(true)
-      } else {
-        setActiveNavbar(false)
-      }
-      
 
-    }
-    window.addEventListener('scroll', Myevent)
-    
+    const currentTheme = localStorage.getItem('theme')
+    setTheme(currentTheme || 'dark')
+    ///////////////////////////////////////::
 
-    return () => window.removeEventListener('scroll', Myevent)
+    window.addEventListener('scroll', ActiveNavbarOnScroll)
+
+
+    return () => window.removeEventListener('scroll', ActiveNavbarOnScroll)
   }, [])
 
   return (
-    <div data-theme={theme} className=" bg-base-100 overflow-hidden font-mono text-primary-content ">
+    <div data-theme={theme} className=" bg-base-100 overflow-hidden  font-sans text-primary-content ">
 
       {ActiveNavbar && <NavBar />}
       <Profile />

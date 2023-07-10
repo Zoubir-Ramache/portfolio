@@ -8,7 +8,7 @@ import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md"
 
 
 function NavBar() {
-  const { setActiveNavbar ,theme , setTheme} = useStateContext()
+  const { setActiveNavbar ,theme , setTheme , ActiveNavbarOnScroll} = useStateContext()
   const handleTheme=()=>{
     if(localStorage.getItem("theme") === 'light'){
       localStorage.setItem('theme','dark')
@@ -25,7 +25,7 @@ function NavBar() {
 
     const ctx = gsap.context(() => {
       gsap.from(navbar.current, {
-        x: 1000 , 
+        x: 1000 ,
       })
 
     })
@@ -33,35 +33,19 @@ function NavBar() {
   }, [])
 
 
-  const AbouteS =()=>{
-    const about = document.getElementById('AboutMe')
+  const ScrollClick =(id:string)=>{
+    const about = document.getElementById(id)
     const position = about?.getBoundingClientRect()
     const navbarSpace= navbar.current?.getBoundingClientRect()
     window.scrollTo({
       top: window.pageYOffset+(position?.top || 0) - navbarSpace.height - 20 , 
       behavior:'smooth'
     })
+
+    setActiveNavbar(false)
     
-  }
-  const ProjectS=()=>{
-    const about = document.getElementById('Projects')
-    const position = about?.getBoundingClientRect()
-    const navbarSpace= navbar.current?.getBoundingClientRect()
-    window.scrollTo({
-      top: window.pageYOffset+(position?.top || 0) - navbarSpace.height - 20 , 
-      behavior:'smooth'
-    })
-
-  }
-  const ContactS=()=>{
-    const about = document.getElementById('Contact')
-    const position = about?.getBoundingClientRect()
-    const navbarSpace= navbar.current?.getBoundingClientRect()
-    window.scrollTo({
-      top: window.pageYOffset+(position?.top || 0) - navbarSpace.height - 20 , 
-      behavior:'smooth'
-    })
-
+    window.removeEventListener('scroll' , ActiveNavbarOnScroll)
+    
   }
   return (
     <header ref={navbar} id="navbar" className='  flex flex-wrap  fixed top-0  items-center w-full z-20  gap-2 justify-around sm:justify-between   bg-primary p-1 sm:px-4 rounded-b-3xl'>
@@ -71,13 +55,13 @@ function NavBar() {
       </div>
       {/* add the opacity for the img  */}
 
-      <a onClick={AbouteS} className='btn btn-secondary  text-sm sm:text-lg      capitalize '>
+      <a onClick={()=>ScrollClick('AboutMe')} className='btn btn-secondary  text-sm sm:text-lg      capitalize '>
         About me <AiFillHome size={20} />
       </a>
-      <a  onClick={ProjectS} className='btn btn-secondary text-sm sm:text-lg    capitalize  '>
+      <a  onClick={()=>ScrollClick('Projects')} className='btn btn-secondary text-sm sm:text-lg    capitalize  '>
         My projects <BsRocketTakeoff size={20} />
       </a>
-      <a  onClick={ContactS} className='btn btn-secondary text-sm sm:text-lg     capitalize '>
+      <a  onClick={()=>ScrollClick('Contact')} className='btn btn-secondary text-sm sm:text-lg     capitalize '>
         Contact me <HiMiniChatBubbleLeftRight size={20} />
       </a>
 
