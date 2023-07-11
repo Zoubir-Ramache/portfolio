@@ -21,11 +21,12 @@ const MyProvider = ({ children }: any) => {
     const [ActiveNavbar, setActiveNavbar] = useState(false)
     const ActiveNavbarOnScroll=()=>{
       const scrollPosition = window.pageYOffset
-        if (scrollPosition > 400) {
-            setActiveNavbar(true)
-          } else {
-            setActiveNavbar(false)
-          }
+
+          if (scrollPosition > 400) {
+              setActiveNavbar(true)
+            } else {
+                setActiveNavbar(false)
+            }
           
     }
     return (

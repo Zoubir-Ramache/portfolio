@@ -26,8 +26,8 @@ function MyProjects() {
         <div className="card mb-8 hover:shadow-md hover:shadow-primary-focus shadow-primary-content dark:shadow-md dark:shadow-primary-content w-96 bg-base-100 shadow-xl">
           <figure><img src='images/projects/Screenshot from 2023-07-06 14-33-23.png' alt="audio notes" /></figure>
           <div className="card-body">
-            <h2 className="card-title">facebook app </h2>
-            <p> a web application created with react js and tailwind css for taking notes  </p>
+            <h2 className="card-title capitalize">facebook app </h2>
+            <p> a web application created with next js  , <br /> this desing is only  for small screen devices ! </p>
 
             <a className="card-actions justify-end" target='_blank' href="https://facebook-app-alpha.vercel.app/" >
               <button className="btn btn-primary">check</button>
@@ -39,7 +39,7 @@ function MyProjects() {
         <div className="card mb-8 hover:shadow-md hover:shadow-primary-focus shadow-primary-content dark:shadow-md dark:shadow-primary-content w-96 bg-base-100 shadow-xl">
           <figure><img src='/images/projects/Screenshot from 2023-07-09 00-40-36.png' alt="audio notes" /></figure>
           <div className="card-body">
-            <h2 className="card-title">audio notes </h2>
+            <h2 className="card-title capitalize">audio notes </h2>
             <p> a web application created with react js and tailwind css for taking notes  </p>
 
             <a className="card-actions justify-end" target='_blank' href='https://o-notes.vercel.app/' >
