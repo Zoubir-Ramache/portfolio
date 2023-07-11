@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from "react"
+import { useEffect} from "react"
 import { NavBar, Profile, MyProjects, ContactMe, AboutMe } from "./components"
 import { useStateContext } from "./Context/FirstProvider"
 

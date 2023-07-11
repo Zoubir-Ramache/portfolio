@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {SiTailwindcss} from 'react-icons/si'
 import {BiLogoCss3 , BiLogoReact , BiLogoJavascript , BiLogoJava , BiLogoNodejs} from 'react-icons/bi'
 import {TbBrandNextjs} from 'react-icons/tb'

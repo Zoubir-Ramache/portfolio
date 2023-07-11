@@ -8,7 +8,7 @@ import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md"
 
 
 function NavBar() {
-  const { setActiveNavbar ,theme , setTheme , ActiveNavbarOnScroll} = useStateContext()
+  const { theme , setTheme , ActiveNavbarOnScroll} = useStateContext()
   const handleTheme=()=>{
     if(localStorage.getItem("theme") === 'light'){
       localStorage.setItem('theme','dark')

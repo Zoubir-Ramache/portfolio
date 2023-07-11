@@ -1,11 +1,11 @@
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/all"
-import { useEffect, useState, useRef, useLayoutEffect } from "react"
+import {  useRef, useLayoutEffect } from "react"
 import { FiChevronsDown } from "react-icons/fi"
 import { useStateContext } from "../Context/FirstProvider"
 function Profile() {
 
-  const { ActiveNavbar, setActiveNavbar } = useStateContext()
+  const {  setActiveNavbar } = useStateContext()
 
   //animation 
   const root = useRef<HTMLDivElement>(null)
@@ -15,7 +15,7 @@ function Profile() {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-    const ctx = gsap.context((self) => {
+    const ctx = gsap.context(() => {
       gsap.to(text.current, {
         opacity: 0, scale: .9,
         scrollTrigger: {
