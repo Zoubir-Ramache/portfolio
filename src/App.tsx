@@ -1,11 +1,11 @@
-import { useEffect} from "react"
-import { NavBar, Profile, MyProjects, ContactMe, AboutMe } from "./components"
+import { useEffect } from "react"
+import { NavBar, Profile, MyProjects, ContactMe, AboutMe, Loading } from "./components"
 import { useStateContext } from "./Context/FirstProvider"
 
 
 function App() {
 
-  const { ActiveNavbar, theme, setTheme, ActiveNavbarOnScroll } = useStateContext()
+  const { ActiveNavbar, theme, setTheme, ActiveNavbarOnScroll, loading } = useStateContext()
 
 
 
@@ -22,17 +22,20 @@ function App() {
   }, [])
 
   return (
-    <div data-theme={theme} className=" bg-base-100 overflow-hidden  font-sans text-primary-content ">
+    <>
+      {loading && <Loading />}
+      <div data-theme={theme} className=" bg-base-100 overflow-hidden  font-sans text-primary-content ">
 
-      {ActiveNavbar && <NavBar />}
-      <Profile />
-      <div className='mt-24 '>
-        <AboutMe />
-        <MyProjects />
-        <ContactMe />
+        {ActiveNavbar && <NavBar />}
+        <Profile />
+        <div className='mt-24 '>
+          <AboutMe />
+          <MyProjects />
+          <ContactMe />
+        </div>
       </div>
+    </>
 
-    </div>
   )
 }
 

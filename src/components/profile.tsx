@@ -5,7 +5,7 @@ import { FiChevronsDown } from "react-icons/fi"
 import { useStateContext } from "../Context/FirstProvider"
 function Profile() {
 
-  const {  setActiveNavbar } = useStateContext()
+  const {  setActiveNavbar , setLoading } = useStateContext()
 
   //animation 
   const root = useRef<HTMLDivElement>(null)
@@ -13,6 +13,11 @@ function Profile() {
   const Myimage = useRef<any>(null)
   const btnDown = useRef<HTMLButtonElement>(null)
 
+
+  const imageLoaded=()=>{
+    setLoading(false)
+    
+  }
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     const ctx = gsap.context(() => {
@@ -65,7 +70,7 @@ function Profile() {
     <div ref={root} id="profile" className='h-[98vh] flex flex-col p-4'>
 
       <div className=' h-full flex sm:flex-nowrap flex-wrap justify-around gap-2 sm:gap-8 items-center '>
-        <img ref={Myimage} className='rounded-full  shadow-md  shadow-secondary ' width={'300'} src="images/IMG_20230411_153707_085.jpg" alt="ramache zoubir" />
+        <img ref={Myimage} onLoad={imageLoaded} className='rounded-full  shadow-md  shadow-secondary ' width={'300'} src="images/IMG_20230411_153707_085.jpg" alt="ramache zoubir" />
 
         <p ref={text} className='text-primary-content  font-semibold text-lg  mb-8 sm:mb-0 '>
 
