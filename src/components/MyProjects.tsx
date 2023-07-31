@@ -21,7 +21,7 @@ function MyProjects() {
   return (
     <div ref={root} className='card  shadow-sm shadow-primary-content m-1 mt-4 p-2' id="Projects">
       <h1 className='card-title text-primary-content underline underline-offset-4 '>My Projects : </h1>
-      <main className='flex gap-4 flex-wrap   justify-around '>
+      <main className='flex gap-4 flex-wrap  py-4 justify-around '>
 
         <div className="card mb-8 hover:shadow-md hover:shadow-primary-focus shadow-primary-content dark:shadow-md dark:shadow-primary-content w-96 bg-base-100 shadow-xl">
           <figure><img src='images/projects/Screenshot from 2023-07-06 14-33-23.png' alt="audio notes" /></figure>

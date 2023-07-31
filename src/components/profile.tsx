@@ -1,11 +1,11 @@
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/all"
-import {  useRef, useLayoutEffect } from "react"
+import { useRef, useLayoutEffect, useEffect } from "react"
 import { FiChevronsDown } from "react-icons/fi"
 import { useStateContext } from "../Context/FirstProvider"
 function Profile() {
 
-  const {  setActiveNavbar , setLoading } = useStateContext()
+  const { setActiveNavbar, setLoading, loading } = useStateContext()
 
   //animation 
   const root = useRef<HTMLDivElement>(null)
@@ -14,9 +14,9 @@ function Profile() {
   const btnDown = useRef<HTMLButtonElement>(null)
 
 
-  const imageLoaded=()=>{
+  const imageLoaded = () => {
     setLoading(false)
-    
+
   }
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -45,25 +45,34 @@ function Profile() {
         }
       })
 
-      gsap.from(Myimage.current, {
-        duration: 1,
-        y: -200, ease: "bounce"
-      })
     }, root)
 
 
     return () => ctx.revert()
   }, [])
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(Myimage.current, {
+        duration: 1,
+        y: -200, ease: "bounce"
+      })
+
+
+    }, root)
+    return () => ctx.revert()
+    
+  }, [loading])
+
   const handleClick = () => {
     setActiveNavbar(true)
     const about = document.getElementById('AboutMe')
-    const position = about?.getBoundingClientRect()    
+    const position = about?.getBoundingClientRect()
 
     window.scrollTo({
-      top: window.pageYOffset+(position?.top || 0) -130 , 
+      top: window.pageYOffset + (position?.top || 0) - 130,
       behavior: "smooth"
-      
+
     })
   }
   return (
@@ -74,7 +83,7 @@ function Profile() {
 
         <p ref={text} className='text-primary-content  font-semibold text-lg  mb-8 sm:mb-0 '>
 
-        As a passionate React web developer, I strive to create immersive and user-centric web applications that seamlessly blend functionality with stunning visuals, delivering exceptional user experiences
+          As a passionate React web developer, I strive to create immersive and user-centric web applications that seamlessly blend functionality with stunning visuals, delivering exceptional user experiences
         </p>
 
 
