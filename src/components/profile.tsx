@@ -1,6 +1,6 @@
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/all"
-import { useRef, useLayoutEffect, useEffect } from "react"
+import { useRef, useLayoutEffect} from "react"
 import { FiChevronsDown } from "react-icons/fi"
 import { useStateContext } from "../Context/FirstProvider"
 function Profile() {
