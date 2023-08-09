@@ -48,7 +48,7 @@ function Profile() {
     return () => ctx.revert()
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(Myimage.current, {
         duration: 1,
