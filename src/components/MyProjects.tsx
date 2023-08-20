@@ -27,11 +27,17 @@ function MyProjects() {
           <figure><img src='images/projects/Screenshot from 2023-07-06 14-33-23.png' alt="audio notes" /></figure>
           <div className="card-body">
             <h2 className="card-title capitalize">facebook app </h2>
-            <p> a web application created with next js  , <br /> this desing is only  for small screen devices ! </p>
+            <p> a web application created with next js  , <br /> <i className=' text-info'>note  </i> : this desing is only  for small screen devices ! </p>
+            <div className='flex  justify-around'>
 
-            <a className="card-actions justify-end" target='_blank' href="https://facebook-app-alpha.vercel.app/" >
-              <button className="btn btn-primary">check</button>
-            </a>
+              <a className="card-actions " target='_blank' href="https://github.com/remmachezoubir/Facebook_app.git" >
+                <button className="btn btn-secondary">github</button>
+              </a>
+              <a className="card-actions" target='_blank' href="https://facebook-app-alpha.vercel.app/" >
+                <button className="btn  btn-primary">check</button>
+              </a>
+            </div>
+
           </div>
         </div>
 
@@ -42,9 +48,15 @@ function MyProjects() {
             <h2 className="card-title capitalize">audio notes </h2>
             <p> a web application created with react js and tailwind css for taking notes  </p>
 
-            <a className="card-actions justify-end" target='_blank' href='https://o-notes.vercel.app/' >
-              <button className="btn btn-primary">check</button>
-            </a>
+            <div className='flex  justify-around'>
+              <a className="card-actions " target='_blank' href="https://github.com/remmachezoubir/o-notes.git" >
+                <button className="btn btn-secondary">github</button>
+              </a>
+              <a className="card-actions justify-end" target='_blank' href='https://o-notes.vercel.app/' >
+                <button className="btn btn-primary">check</button>
+              </a>
+
+            </div>
           </div>
         </div>
       </main>
