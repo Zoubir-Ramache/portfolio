@@ -28,11 +28,11 @@ useLayoutEffect(() => {
       <main className='flex gap-4 flex-wrap  justify-around mt-4'>
         <div className='card p-1 '>
           
-          <a href='https://www.facebook.com/zoubir.remmach?mibextid=ZbWKwL' target='_blank' className=' shadow-sm shadow-primary-content  card-title text-primary-content   btn-ghost p-2 rounded-lg'>
+          <a href='https://www.facebook.com/zoubir.ramach' target='_blank' className=' shadow-sm shadow-primary-content  card-title text-primary-content   btn-ghost p-2 rounded-lg'>
             facebook <BsFacebook size={25} />
           </a>
         </div>
-        <a href='https://instagram.com/ramache_zoubir?igshid=MzNlNGNkZWQ4Mg==' target='_blank' className='card p-1 btn-ghost shadow-sm shadow-primary-content items-center flex flex-row '>
+        <a href='https://instagram.com/ramache_zoubir' target='_blank' className='card p-1 btn-ghost shadow-sm shadow-primary-content items-center flex flex-row '>
           <h1 className=' card-title   text-primary-content  p-2 rounded-lg'>
             instagram 
           </h1>

@@ -7,6 +7,8 @@ function Profile() {
 
   const { setActiveNavbar, setLoading, loading } = useStateContext()
 
+
+
   //animation 
   const root = useRef<HTMLDivElement>(null)
   const text = useRef<HTMLDivElement>(null)
@@ -15,9 +17,9 @@ function Profile() {
 
 
   const imageLoaded = () => {
-    setTimeout(()=>{
+    setTimeout(() => {
       setLoading(false)
-    } , 1000)
+    }, 1000)
 
   }
   useLayoutEffect(() => {
@@ -32,15 +34,15 @@ function Profile() {
         }
       })
 
-      gsap.to(Myimage.current, {
-        opacity: 0,
-        scale: .8,
-        scrollTrigger: {
-          trigger: Myimage.current,
-          scrub: 1,
-          pin: true
-        }
-      })
+      // gsap.to(Myimage.current, {
+      //   opacity: 0,
+      //   scale: .8,
+      //   scrollTrigger: {
+      //     trigger: Myimage.current,
+      //     scrub: 1,
+      //     pin: true
+      //   }
+      // })
 
     }, root)
 
@@ -49,12 +51,19 @@ function Profile() {
   }, [])
 
   useLayoutEffect(() => {
+
+
+
     const ctx = gsap.context(() => {
-      gsap.from(Myimage.current, {
-        duration: 1,
-        y: -600, ease: "bounce" ,
-        delay:1
-      })
+      
+        gsap.from(Myimage.current, {
+          duration: 1,
+          y: -600,
+          ease: "bounce",
+          delay: 1
+        })
+
+      
       gsap.from(text.current, {
         duration: 3,
         opacity: 0,
@@ -64,7 +73,7 @@ function Profile() {
 
     }, root)
     return () => ctx.revert()
-    
+
   }, [loading])
 
   const handleClick = () => {
