@@ -1,11 +1,10 @@
 import { HiMiniChatBubbleLeftRight } from "react-icons/hi2"
 import { AiFillHome } from "react-icons/ai"
 import { BsRocketTakeoff } from "react-icons/bs"
-import { useLayoutEffect, useRef } from "react"
-import { gsap} from "gsap"
+import {  useRef } from "react"
 import { useStateContext } from "../Context/FirstProvider"
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md"
-
+import {motion as m} from "framer-motion"
 
 function NavBar() {
   const { theme , setTheme , ActiveNavbarOnScroll} = useStateContext()
@@ -20,17 +19,8 @@ function NavBar() {
   }
 
   const navbar = useRef<any>(null)
-  useLayoutEffect(() => {
 
 
-    const ctx = gsap.context(() => {
-      gsap.from(navbar.current, {
-        x: 1000 ,
-      })
-
-    })
-    return () => ctx.revert()
-  }, [])
 
 
   const ScrollClick = (id:string)=>{
@@ -42,14 +32,13 @@ function NavBar() {
       behavior:'smooth'
     })
     
-      // setActiveNavbar(false)
     window.removeEventListener('scroll' , ActiveNavbarOnScroll)
     
     
   }
   
   return (
-    <header ref={navbar} id="navbar" className='  flex flex-wrap  fixed top-0  items-center w-full z-20  gap-2 justify-around sm:justify-between   bg-primary p-1 sm:px-4 rounded-b-3xl'>
+    <m.header animate={{x:0}} initial={{x:400}} ref={navbar}  id="navbar" className='  flex flex-wrap  fixed top-0  items-center w-full z-20  gap-2 justify-around sm:justify-between   bg-primary p-1 sm:px-4 rounded-b-3xl'>
       <div>
         <a href="#profile">
           <img className='rounded-full  shadow-md   shadow-secondary ' width={'60'} src="images/IMG_20230411_153707_085.jpg" alt="ramache zoubir" /></a>
@@ -70,7 +59,7 @@ function NavBar() {
         {theme !=="dark"?<MdOutlineDarkMode size={25} />
         :<MdOutlineLightMode size={25}/>}
         </button>
-    </header>
+    </m.header>
   )
 }
 
