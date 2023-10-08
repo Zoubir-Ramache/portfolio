@@ -40,20 +40,20 @@ function NavBar() {
   return (
     <m.header animate={{x:0}} initial={{x:400}} ref={navbar}  id="navbar" className='  flex flex-wrap  fixed top-0  items-center w-full z-20  gap-2 justify-around sm:justify-between   bg-primary p-1 sm:px-4 rounded-b-3xl'>
       <div>
-        <a href="#profile">
-          <img className='rounded-full  shadow-md   shadow-secondary ' width={'60'} src="images/IMG_20230411_153707_085.jpg" alt="ramache zoubir" /></a>
+        <button onClick={()=>ScrollClick('profile')}>
+          <img className='rounded-full  shadow-md   shadow-secondary ' width={'60'} src="images/IMG_20230411_153707_085.jpg" alt="ramache zoubir" /></button>
       </div>
       {/* add the opacity for the img  */}
 
-      <a onClick={()=>ScrollClick('AboutMe')} className='btn btn-secondary  text-sm sm:text-lg      capitalize '>
+      <button onClick={()=>ScrollClick('AboutMe')} className='btn btn-secondary  text-sm sm:text-lg text-white    capitalize '>
         About me <AiFillHome size={20} />
-      </a>
-      <a  onClick={()=>ScrollClick('Projects')} className='btn btn-secondary text-sm sm:text-lg    capitalize  '>
+      </button>
+      <button  onClick={()=>ScrollClick('Projects')} className='btn btn-secondary text-sm sm:text-lg text-white    capitalize  '>
         My projects <BsRocketTakeoff size={20} />
-      </a>
-      <a  onClick={()=>ScrollClick('Contact')} className='btn btn-secondary text-sm sm:text-lg     capitalize '>
+      </button>
+      <button  onClick={()=>ScrollClick('Contact')} className='btn btn-secondary text-sm sm:text-lg text-white     capitalize '>
         Contact me <HiMiniChatBubbleLeftRight size={20} />
-      </a>
+      </button>
 
       <button className="btn btn-secondary btn-circle" onClick={handleTheme}>
         {theme !=="dark"?<MdOutlineDarkMode size={25} />

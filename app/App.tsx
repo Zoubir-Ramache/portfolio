@@ -1,9 +1,8 @@
-import { useEffect } from "react"
-import { NavBar, Profile, MyProjects, ContactMe, AboutMe, Loading } from "./components"
-import { useStateContext } from "./Context/FirstProvider"
-
-
-function App() {
+"use client"
+import { useEffect  } from "react"
+import { useStateContext } from "@/Context/FirstProvider"
+import { NavBar, Profile, MyProjects, ContactMe, AboutMe, Loading } from "@/components"
+export default function App() {
 
   const { ActiveNavbar, theme, setTheme, ActiveNavbarOnScroll, loading } = useStateContext()
 
@@ -16,10 +15,8 @@ function App() {
     ///////////////////////////////////////::
 
     window.addEventListener('scroll', ActiveNavbarOnScroll)
-
-
-    return () => window.removeEventListener('scroll', ActiveNavbarOnScroll)
-  }, [])
+      
+    }, [setTheme , ActiveNavbarOnScroll])
 
   return (
     <>
@@ -37,6 +34,5 @@ function App() {
     </>
 
   )
-}
 
-export default App
+}

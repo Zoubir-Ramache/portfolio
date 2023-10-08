@@ -88,29 +88,38 @@
                 0 0 var(--h) #00ffee;
 }
 .top::after{
-    content: "...";
-    animation: dots 3s infinite;
+    content: ""; 
+    position: absolute;
+
+    animation: dots 3s 1s infinite;
+    text-shadow: 2px 2px 2px #00ffee;
 }
 @keyframes dots {
-    0% , 100%{
-        content: " ";
-    }
-    10% , 90%{
+    0%  , 100%{
         content: ".";
     }
-    20% , 80%{
-        content: "..";
+    10%{
+        content: "L";
     }
-    30% , 70%{
-        content: "...";
+    20% {
+        content: "Lo";
     }
-    40% , 60%{
-        content: "....";
+    30% {
+        content: "Loa";
+    }
+    40% {
+        content: "Load";
+    }
+    50% {
+        content: "Loadi";
+    }
+    60%{
+        content:"Loadin";
+    }
+    70% , 90%{
+        content: "Loading";
     }
 
-    50%{
-        content: ".....";
-    }
 }
 .container{
 
