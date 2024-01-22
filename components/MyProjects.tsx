@@ -37,10 +37,10 @@ function MyProjects() {
 
             <div className='flex  justify-around'>
               <a className="card-actions " target='_blank' href="https://github.com/remmachezoubir/o-notes.git" >
-                <button className="btn btn-secondary">github</button>
+                <button className="btn btn-secondary text-white">github</button>
               </a>
               <a className="card-actions justify-end" target='_blank' href='https://o-notes.vercel.app/' >
-                <button className="btn btn-info text-white">check</button>
+                <button className="btn btn-info ">check</button>
               </a>
 
             </div>
