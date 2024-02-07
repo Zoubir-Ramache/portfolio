@@ -10,7 +10,7 @@ function Skills() {
   
   return (
 
-    <footer>
+    <div>
     <h2 className=' card-title text-primary-content underline'>my skills :</h2>
     <div  className=' w-full flex flex-wrap justify-around gap-2 px-8 py-2 capitalize font-bold'>
 
@@ -26,7 +26,7 @@ function Skills() {
 
     </div>
     
-  </footer>
+  </div>
 
 
     )
