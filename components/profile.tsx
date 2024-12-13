@@ -35,7 +35,7 @@ function Profile() {
         <m.img
           drag dragConstraints={{ right: 0, left: 0, top: 0, bottom: 0 }} dragElastic={1}
           whileHover={{ scale: 1.05 }} whileTap={{ rotate: 4 }} animate={!loading ? { y:0} : {}} initial={{ y: -500 }} transition={{ type: "spring", stiffness: 120 }}
-          className='rounded-full  shadow-md  shadow-secondary ' width={'300'} src="images/IMG_20230411_153707_085.jpg" alt="ramache zoubir" />
+          className='rounded-full aspect-square object-cover shadow-md shadow-secondary' width={'300'} height={'300'} src="images/RAMACHE_ZOUBIR.png" alt="ramache zoubir" />
 
         <m.p initial={{ opacity: 0 }} animate={loading ? {} : { opacity: 1 }} transition={{ delay: .3, type: "spring", stiffness: 200 }} className='text-primary-content  font-semibold text-lg  mb-8 sm:mb-0 '>
 
