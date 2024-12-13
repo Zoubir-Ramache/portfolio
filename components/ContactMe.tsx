@@ -10,7 +10,6 @@ type props = {
 };
 export default function ContactMe() {
   const { scrollYProgress } = useScroll();
-
   return (
     <m.div
       style={{ scaleX: scrollYProgress }}
@@ -51,7 +50,7 @@ const CONTACTS: props[] = [
     name: "github",
     Icon: () => <BsGithub />,
 
-    link: "https://github.com/remmachezoubir",
+    link: "https://github.com/Zoubir-Ramache/",
   },
   {
     name: "linkdin",
