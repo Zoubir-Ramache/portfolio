@@ -15,12 +15,20 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: [{
-      light: {
-        ...require("daisyui/src/theming/themes")["[data-theme=light]"],
-        "primary-content": "#2b3440",
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["[data-theme=winter]"],
+          primary: "#6366f1",
+          secondary: "#06b6d4",
+        },
+        dark: {
+          ...require("daisyui/src/theming/themes")["[data-theme=night]"],
+          primary: "#818cf8",
+          secondary: "#22d3ee",
+        },
       },
-    }, "dark"],
+    ],
   },
   plugins: [require('daisyui')],
 
