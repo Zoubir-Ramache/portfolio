@@ -1,4 +1,5 @@
 import {motion as m }from "framer-motion"
+import Image from "next/image"
 
 function MyProjects() {
 
@@ -11,10 +12,10 @@ function MyProjects() {
       <main className='flex gap-4 flex-wrap  py-4 justify-around '>
 
         <m.div initial={{scaleX:.7}} whileInView={{scaleX:1}} transition={{delay:.1}} className="card mb-8 hover:shadow-md hover:shadow-primary-focus shadow-primary-content dark:shadow-sm dark:shadow-primary-content w-96 bg-base-100 shadow-xl">
-          <figure><img src='images/projects/Screenshot from 2023-07-06 14-33-23.png' alt="audio notes"  /></figure>
+          <figure><Image src='/images/projects/Screenshot from 2023-07-06 14-33-23.png' alt="audio notes" width={400} height={225} /></figure>
           <div className="card-body">
             <h2 className="card-title capitalize">facebook app </h2>
-            <p> a web application created with next js  , <br /> <i className=' text-info'>note  </i> : this desing is only  for small screen devices ! </p>
+            <p> a web application created with next js  , <br /> <i className=' text-info'>note  </i> : this design is only  for small screen devices ! </p>
             <div className='flex  justify-around'>
 
               <a className="card-actions " target='_blank' href="https://github.com/remmachezoubir/Facebook_app.git" >
@@ -30,7 +31,7 @@ function MyProjects() {
 
 
         <m.div initial={{scaleX:.7}} whileInView={{scaleX:1}} transition={{delay:.1}} className="card mb-8 hover:shadow-md hover:shadow-primary-focus shadow-primary-content dark:shadow-sm dark:shadow-primary-content w-96 bg-base-100 shadow-xl">
-          <figure><img src='/images/projects/Screenshot from 2023-07-09 00-40-36.png' alt="audio notes" /></figure>
+          <figure><Image src='/images/projects/Screenshot from 2023-07-09 00-40-36.png' alt="audio notes" width={400} height={225} /></figure>
           <div className="card-body">
             <h2 className="card-title capitalize">audio notes </h2>
             <p> a web application created with react js and tailwind css for taking notes  </p>

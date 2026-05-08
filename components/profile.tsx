@@ -2,6 +2,7 @@ import { FiChevronsDown } from "react-icons/fi"
 import { useStateContext } from "../Context/FirstProvider"
 import { motion as m } from "framer-motion"
 import { useEffect } from "react"
+import Image from "next/image"
 function Profile() {
 
   const { setActiveNavbar, setLoading, loading } = useStateContext()
@@ -32,10 +33,13 @@ function Profile() {
     <div id="profile" className='h-[98vh] flex flex-col p-4'>
 
       <div className=' h-full flex sm:flex-nowrap flex-wrap justify-around gap-2 sm:gap-8 items-center '>
-        <m.img
+        <m.div
           drag dragConstraints={{ right: 0, left: 0, top: 0, bottom: 0 }} dragElastic={1}
-          whileHover={{ scale: 1.05 }} whileTap={{ rotate: 4 }} animate={!loading ? { y:0} : {}} initial={{ y: -500 }} transition={{ type: "spring", stiffness: 120 }}
-          className='rounded-full aspect-square object-cover shadow-md shadow-secondary' width={'300'} height={'300'} src="images/RAMACHE_ZOUBIR.png" alt="ramache zoubir" />
+          whileHover={{ scale: 1.05 }} whileTap={{ rotate: 4 }} animate={!loading ? { y: 0 } : {}} initial={{ y: -500 }} transition={{ type: "spring", stiffness: 120 }}
+        >
+          <Image
+            className='rounded-full aspect-square object-cover shadow-md shadow-secondary' width={300} height={300} src="/images/RAMACHE_ZOUBIR.png" alt="ramache zoubir" />
+        </m.div>
 
         <m.p initial={{ opacity: 0 }} animate={loading ? {} : { opacity: 1 }} transition={{ delay: .3, type: "spring", stiffness: 200 }} className='text-primary-content  font-semibold text-lg  mb-8 sm:mb-0 '>
 

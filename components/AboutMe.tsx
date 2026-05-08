@@ -14,8 +14,8 @@ function AboutMe() {
         About me :
       </h1>
       <article className=" inline-block font-semibold p-2 pl-8 text-primary-content  ">
-        <li>a web devloper from algeria</li>
-        <li>student at the univercity of constantine</li>
+        <li>a web developer from algeria</li>
+        <li>student at the university of constantine</li>
         <li>20 years old</li>
 
         <Skills />

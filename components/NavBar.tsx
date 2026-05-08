@@ -5,6 +5,7 @@ import {  useRef } from "react"
 import { useStateContext } from "../Context/FirstProvider"
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md"
 import {motion as m} from "framer-motion"
+import Image from "next/image"
 
 function NavBar() {
   const { theme , setTheme , ActiveNavbarOnScroll} = useStateContext()
@@ -28,7 +29,7 @@ function NavBar() {
     const position = about?.getBoundingClientRect()
     const navbarSpace= navbar.current?.getBoundingClientRect()
     window.scrollTo({
-      top: window.pageYOffset+(position?.top || 0) - navbarSpace.height - 20 , 
+      top: window.scrollY+(position?.top || 0) - navbarSpace.height - 20 ,
       behavior:'smooth'
     })
     
@@ -41,7 +42,7 @@ function NavBar() {
     <m.header animate={{x:0}} initial={{x:400}} ref={navbar}  id="navbar" className='  flex flex-wrap  fixed top-0  items-center w-full z-20  gap-2 justify-around sm:justify-between   bg-primary p-1 sm:px-4 rounded-b-3xl'>
       <div>
         <button onClick={()=>ScrollClick('profile')}>
-          <img className='rounded-full  shadow-md   shadow-secondary ' width={'60'} src="images/RAMACHE_ZOUBIR.png" alt="ramache zoubir" /></button>
+          <Image className='rounded-full  shadow-md   shadow-secondary ' width={60} height={60} src="/images/RAMACHE_ZOUBIR.png" alt="ramache zoubir" /></button>
       </div>
       {/* add the opacity for the img  */}
 
