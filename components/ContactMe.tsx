@@ -53,7 +53,7 @@ const CONTACTS: props[] = [
     link: "https://github.com/Zoubir-Ramache/",
   },
   {
-    name: "linkdin",
+    name: "LinkedIn",
     Icon: () => <AiFillLinkedin size={25} />,
     link: "https://www.linkedin.com/in/zoubir-ramache-04189a25b",
   },

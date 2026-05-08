@@ -26,7 +26,7 @@ const MyProvider = ({ children }: any) => {
     const [theme, setTheme] = useState("dark")
     const [ActiveNavbar, setActiveNavbar] = useState(false)
     const ActiveNavbarOnScroll=()=>{
-      const scrollPosition = window.pageYOffset
+      const scrollPosition = window.scrollY
 
           if (scrollPosition > 400) {
               setActiveNavbar(true)
