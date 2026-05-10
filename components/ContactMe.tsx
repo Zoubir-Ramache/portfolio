@@ -1,75 +1,97 @@
-import { BsFacebook , BsInstagram  , BsGithub} from "react-icons/bs";
+"use client";
+
+import { BsFacebook, BsInstagram, BsGithub } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 import { BiLogoGmail } from "react-icons/bi";
-import { motion as m, useScroll } from "framer-motion";
+import { motion as m } from "framer-motion";
 import { IconType } from "react-icons";
-type props = {
+
+type ContactEntry = {
   name: string;
   Icon: IconType;
   link: string;
 };
-export default function ContactMe() {
-  const { scrollYProgress } = useScroll();
-  return (
-    <m.div
-      style={{ scaleX: scrollYProgress }}
-      className="  mb-20 font-sans card shadow-sm shadow-primary-content m-1 mt-4 p-2 capitalize"
-    >
-      <h1
-        id="Contact"
-        className="card-title text-primary-content underline underline-offset-4 "
-      >
-        Contact me :
-      </h1>
-      <div className="flex gap-4 flex-wrap  justify-around mt-4">
-        {CONTACTS.map(({ name, Icon, link }) => (
-          <Contact name={name} link={link} Icon={Icon} key={link} />
-        ))}
-      </div>
-    </m.div>
-  );
-}
-const Contact = ({ name, Icon, link }: props) => (
-  <m.a
-    whileInView={{ scale: 1 }}
-    initial={{ scale: 0.6 }}
-    transition={{ delay: 0.1 }}
-    href={link}
-    target="_blank"
-    className="card p-1 btn-ghost shadow-sm shadow-primary-content items-center flex flex-row "
-    key={link}
-  >
-    <h1 className="card-title shadow-sm shadow-primary-content   text-primary-content btn-ghost p-2 rounded-lg">
-      {name} <Icon />
-    </h1>
-  </m.a>
-);
 
-const CONTACTS: props[] = [
+const CONTACTS: ContactEntry[] = [
   {
-    name: "github",
-    Icon: () => <BsGithub />,
-
+    name: "GitHub",
+    Icon: BsGithub,
     link: "https://github.com/Zoubir-Ramache/",
   },
   {
-    name: "linkdin",
-    Icon: () => <AiFillLinkedin size={25} />,
+    name: "LinkedIn",
+    Icon: AiFillLinkedin,
     link: "https://www.linkedin.com/in/zoubir-ramache-04189a25b",
   },
   {
-    name: "gmail",
-    Icon: () => <BiLogoGmail />,
+    name: "Email",
+    Icon: BiLogoGmail,
     link: "mailto:ramachezoubir@gmail.com",
   },
   {
-    name: "instagram",
-    Icon: () => <BsInstagram className="inline-block" size={25} />,
+    name: "Instagram",
+    Icon: BsInstagram,
     link: "https://instagram.com/ramache_zoubir",
   },
   {
-    name: "facebook",
-    Icon: () => <BsFacebook size={25} />,
+    name: "Facebook",
+    Icon: BsFacebook,
     link: "https://www.facebook.com/zoubir.ramach",
   },
 ];
+
+export default function ContactMe() {
+  return (
+    <section id="contact" className="mx-auto max-w-5xl px-6 py-28 pb-32">
+      <m.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="rounded-[3rem] border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-10 text-center md:p-16"
+      >
+        <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+          Contact
+        </p>
+        <h2 className="mt-6 text-4xl font-black leading-tight text-white md:text-6xl">
+          Let&apos;s build something meaningful.
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
+          Open to freelance work, collaborations, and teams that care about
+          craft. Reach out by email or connect on social.
+        </p>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <a
+            href="mailto:ramachezoubir@gmail.com"
+            className="rounded-2xl bg-white px-8 py-4 font-semibold text-black transition hover:scale-[1.02]"
+          >
+            Email me
+          </a>
+          <a
+            href="https://github.com/Zoubir-Ramache/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-2xl border border-white/10 bg-white/5 px-8 py-4 font-medium text-white transition hover:bg-white/10"
+          >
+            GitHub
+          </a>
+        </div>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
+          {CONTACTS.map(({ name, Icon, link }) => (
+            <a
+              key={link}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-sm text-zinc-300 transition hover:border-white/20 hover:text-white"
+            >
+              <Icon className="text-lg" />
+              {name}
+            </a>
+          ))}
+        </div>
+      </m.div>
+    </section>
+  );
+}

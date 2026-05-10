@@ -4,9 +4,16 @@ import MyProjects from "./MyProjects";
 import NavBar from "./NavBar";
 import Profile from "./profile";
 import Loading from "./loading";
+import TechStack from "./TechStack";
 export {
-    AboutMe , ContactMe , MyProjects , NavBar , Profile , Loading
-}
+  AboutMe,
+  ContactMe,
+  MyProjects,
+  NavBar,
+  Profile,
+  Loading,
+  TechStack,
+};
 
 
 

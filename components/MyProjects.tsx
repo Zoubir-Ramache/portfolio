@@ -1,56 +1,153 @@
-import {motion as m }from "framer-motion"
+"use client";
+
+import { motion as m } from "framer-motion";
+
+type Project = {
+  title: string;
+  year: string;
+  description: string;
+  tags: string[];
+  liveHref?: string;
+  repoHref?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  featured?: boolean;
+};
+
+const PROJECTS: Project[] = [
+  {
+    title: "Rihlaty",
+    year: "2026",
+    description:
+      "Compare travel offers from verified agencies in one place — discovery, agency tiers, and traveler-focused UX. Developed alongside two other developers.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Collaboration"],
+    liveHref: "https://rihlaty-client.vercel.app/",
+    featured: true,
+  },
+  {
+    title: "Facebook-style app",
+    year: "2023",
+    description:
+      "Next.js social-style UI experiment optimized for small screens.",
+    tags: ["Next.js", "React"],
+    repoHref: "https://github.com/remmachezoubir/Facebook_app.git",
+    liveHref: "https://facebook-app-alpha.vercel.app/",
+    imageSrc: "/images/projects/Screenshot from 2023-07-06 14-33-23.png",
+    imageAlt: "Facebook app preview",
+  },
+  {
+    title: "Audio notes",
+    year: "2023",
+    description:
+      "React and Tailwind app for capturing and organizing voice notes.",
+    tags: ["React", "Tailwind CSS"],
+    repoHref: "https://github.com/remmachezoubir/o-notes.git",
+    liveHref: "https://o-notes.vercel.app/",
+    imageSrc: "/images/projects/Screenshot from 2023-07-09 00-40-36.png",
+    imageAlt: "Audio notes app preview",
+  },
+];
 
 function MyProjects() {
-
-
-    
-
   return (
-    <m.div whileInView={{opacity:1}} initial={{opacity:0}} transition={{delay:.2}} className='card  shadow-sm shadow-primary-content m-1 mt-4 p-2' id="Projects">
-      <h1 className='card-title text-primary-content underline underline-offset-4 '>My Projects : </h1>
-      <main className='flex gap-4 flex-wrap  py-4 justify-around '>
+    <section id="projects" className="mx-auto max-w-7xl px-6 py-28">
+      <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+            Selected work
+          </p>
+          <h2 className="mt-4 text-4xl font-black text-white md:text-5xl">
+            Featured projects
+          </h2>
+        </div>
+      </div>
 
-        <m.div initial={{scaleX:.7}} whileInView={{scaleX:1}} transition={{delay:.1}} className="card mb-8 hover:shadow-md hover:shadow-primary-focus shadow-primary-content dark:shadow-sm dark:shadow-primary-content w-96 bg-base-100 shadow-xl">
-          <figure><img src='images/projects/Screenshot from 2023-07-06 14-33-23.png' alt="audio notes"  /></figure>
-          <div className="card-body">
-            <h2 className="card-title capitalize">facebook app </h2>
-            <p> a web application created with next js  , <br /> <i className=' text-info'>note  </i> : this desing is only  for small screen devices ! </p>
-            <div className='flex  justify-around'>
-
-              <a className="card-actions " target='_blank' href="https://github.com/remmachezoubir/Facebook_app.git" >
-                <button className="btn btn-secondary text-white">github</button>
-              </a>
-              <a className="card-actions" target='_blank' href="https://facebook-app-alpha.vercel.app/" >
-                <button className="btn  btn-info">check</button>
-              </a>
+      <div className="grid gap-8 lg:grid-cols-2">
+        {PROJECTS.map((project, index) => (
+          <m.article
+            key={project.title}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ delay: index * 0.06 }}
+            className={`group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition hover:border-white/20 ${
+              project.featured ? "lg:col-span-2" : ""
+            }`}
+          >
+            <div
+              className={`relative overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-950 ${
+                project.featured ? "h-80 md:h-96" : "h-72"
+              }`}
+            >
+              {project.imageSrc ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={project.imageSrc}
+                  alt={project.imageAlt ?? project.title}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 via-purple-500/10 to-transparent" />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 transition duration-500 group-hover:opacity-100" />
+              {project.featured && (
+                <div className="absolute left-6 top-6 rounded-full border border-white/15 bg-black/50 px-4 py-1 text-xs font-medium text-zinc-200 backdrop-blur-md">
+                  Team project · live product
+                </div>
+              )}
             </div>
 
-          </div>
-        </m.div>
+            <div className="p-8">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <h3 className="text-2xl font-bold text-white">
+                  {project.title}
+                </h3>
+                <span className="text-sm text-zinc-500">{project.year}</span>
+              </div>
 
+              <p className="mt-4 leading-relaxed text-zinc-400">
+                {project.description}
+              </p>
 
-        <m.div initial={{scaleX:.7}} whileInView={{scaleX:1}} transition={{delay:.1}} className="card mb-8 hover:shadow-md hover:shadow-primary-focus shadow-primary-content dark:shadow-sm dark:shadow-primary-content w-96 bg-base-100 shadow-xl">
-          <figure><img src='/images/projects/Screenshot from 2023-07-09 00-40-36.png' alt="audio notes" /></figure>
-          <div className="card-body">
-            <h2 className="card-title capitalize">audio notes </h2>
-            <p> a web application created with react js and tailwind css for taking notes  </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {project.tags.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-full border border-white/10 px-3 py-2 text-sm text-zinc-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
-            <div className='flex  justify-around'>
-              <a className="card-actions " target='_blank' href="https://github.com/remmachezoubir/o-notes.git" >
-                <button className="btn btn-secondary text-white">github</button>
-              </a>
-              <a className="card-actions justify-end" target='_blank' href='https://o-notes.vercel.app/' >
-                <button className="btn btn-info ">check</button>
-              </a>
-
+              <div className="mt-8 flex flex-wrap gap-3">
+                {project.liveHref && (
+                  <a
+                    href={project.liveHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.02]"
+                  >
+                    View live
+                  </a>
+                )}
+                {project.repoHref && (
+                  <a
+                    href={project.repoHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                  >
+                    GitHub
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        </m.div>
-      </main>
-
-
-    </m.div>
-  )
+          </m.article>
+        ))}
+      </div>
+    </section>
+  );
 }
 
-export default MyProjects
+export default MyProjects;
