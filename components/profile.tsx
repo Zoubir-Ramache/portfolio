@@ -53,9 +53,10 @@ function Profile() {
             transition={{ delay: 0.15 }}
             className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400"
           >
-            React-focused developer building clean, animated interfaces with
-            Next.js and modern UI systems — based in Algeria, studying at the
-            University of Constantine.
+            Developer building clean web experiences — Next.js and React on the
+            frontend, and NestJS or Node.js when the project needs APIs or
+            server-side work. Fifth-year student at the University of Constantine
+            2 — currently focused on my graduation project, Rihlaty.
           </m.p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -81,8 +82,8 @@ function Profile() {
               <p>Shipped projects</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-white">2+</h3>
-              <p>Years learning</p>
+              <h3 className="text-3xl font-bold text-white">5</h3>
+              <p>Years at university</p>
             </div>
             <div>
               <h3 className="text-3xl font-bold text-white">100%</h3>
@@ -97,11 +98,12 @@ function Profile() {
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
             <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
               <div>
-                <p className="text-sm text-zinc-500">Current focus</p>
+                <p className="text-sm text-zinc-500">Graduation project</p>
                 <h3 className="mt-1 text-2xl font-bold text-white">Rihlaty</h3>
                 <p className="mt-2 max-w-xs text-sm text-zinc-400">
                   Travel marketplace to compare offers from verified agencies —
-                  built with two other developers.
+                  my final-year project at Constantine 2, built with two other
+                  developers.
                 </p>
               </div>
               <a
@@ -124,7 +126,12 @@ function Profile() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {["Next.js", "TypeScript", "Tailwind CSS", "Team collaboration"].map(
+              {[
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "Graduation project",
+              ].map(
                 (tech) => (
                   <span
                     key={tech}

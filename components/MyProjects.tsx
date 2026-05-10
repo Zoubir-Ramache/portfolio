@@ -12,6 +12,7 @@ type Project = {
   imageSrc?: string;
   imageAlt?: string;
   featured?: boolean;
+  featuredBadge?: string;
 };
 
 const PROJECTS: Project[] = [
@@ -19,10 +20,11 @@ const PROJECTS: Project[] = [
     title: "Rihlaty",
     year: "2026",
     description:
-      "Compare travel offers from verified agencies in one place — discovery, agency tiers, and traveler-focused UX. Developed alongside two other developers.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Collaboration"],
+      "My graduation project at the University of Constantine 2: compare travel offers from verified agencies in one place — discovery, agency tiers, and traveler-focused UX. Built with two other developers.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Graduation project"],
     liveHref: "https://rihlaty-client.vercel.app/",
     featured: true,
+    featuredBadge: "Graduation project · team of 3 · live",
   },
   {
     title: "Facebook-style app",
@@ -90,9 +92,9 @@ function MyProjects() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 via-purple-500/10 to-transparent" />
               )}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 transition duration-500 group-hover:opacity-100" />
-              {project.featured && (
+              {project.featured && project.featuredBadge && (
                 <div className="absolute left-6 top-6 rounded-full border border-white/15 bg-black/50 px-4 py-1 text-xs font-medium text-zinc-200 backdrop-blur-md">
-                  Team project · live product
+                  {project.featuredBadge}
                 </div>
               )}
             </div>

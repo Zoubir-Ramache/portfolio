@@ -22,10 +22,11 @@ function AboutMe() {
           className="space-y-6 text-lg leading-relaxed text-zinc-400"
         >
           <p>
-            I am a web developer from Algeria, currently studying at the
-            University of Constantine. I enjoy turning ideas into fast,
-            accessible frontends and collaborating closely when building real
-            products — like{" "}
+            I am a web developer from Algeria in my fifth year at the{" "}
+            <strong className="font-semibold text-zinc-200">
+              University of Constantine 2
+            </strong>
+            . Most of my energy right now goes into{" "}
             <a
               href="https://rihlaty-client.vercel.app/"
               target="_blank"
@@ -34,12 +35,17 @@ function AboutMe() {
             >
               Rihlaty
             </a>
-            , where I shipped features together with two other developers.
+            , my graduation project — a platform where travelers compare offers
+            from verified agencies. I build it together with two other
+            developers.
           </p>
           <ul className="list-inside list-disc space-y-2 text-zinc-400">
-            <li>React / Next.js for apps and marketing surfaces</li>
+            <li>
+              Next.js and React for UIs; NestJS or Node.js when I am on APIs or
+              backend pieces
+            </li>
             <li>Tailwind CSS and component-driven layouts</li>
-            <li>Learning continuously across the full stack</li>
+            <li>Shipping real features on a multi-developer graduation project</li>
           </ul>
         </m.div>
       </div>
