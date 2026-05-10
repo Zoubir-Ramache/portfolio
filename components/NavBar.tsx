@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion as m } from "framer-motion";
+import Logo from "./Logo";
 
 function NavBar() {
   const navbar = useRef<HTMLElement>(null);
@@ -25,11 +26,9 @@ function NavBar() {
         <button
           type="button"
           onClick={() => scrollToId("hero")}
-          className="text-left"
+          className="text-left transition hover:opacity-90"
         >
-          <span className="text-2xl font-bold tracking-tight text-white">
-            Zoubir.
-          </span>
+          <Logo />
         </button>
 
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400">
