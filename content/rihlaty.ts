@@ -11,6 +11,7 @@ export const RIHLATY_TECH_TAGS = [
   "Django",
   "Supabase",
   "Cloudinary",
+  "AI recommendations",
   "Tailwind CSS",
   "Graduation project",
 ] as const;
@@ -19,6 +20,6 @@ export const RIHLATY_HERO = {
   eyebrow: "Graduation project",
   title: "Rihlaty",
   description:
-    "Travel marketplace to compare offers from verified agencies — my final-year project at Constantine 2, built with two other developers.",
-  spotlightTitle: "Compare travel offers — live app",
+    "Travel marketplace to compare offers from verified agencies, with AI-powered recommendations tailored to travelers — my final-year project at Constantine 2, built with two other developers.",
+  spotlightTitle: "Compare offers & AI recommendations — live app",
 } as const;

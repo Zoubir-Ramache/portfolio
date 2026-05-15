@@ -37,8 +37,8 @@ function AboutMe() {
               Rihlaty
             </a>
             , my graduation project — a platform where travelers compare offers
-            from verified agencies. I build it together with two other
-            developers.
+            from verified agencies and get AI-powered trip recommendations. I
+            build it together with two other developers.
           </p>
           <ul className="list-inside list-disc space-y-2 text-zinc-400">
             <li>

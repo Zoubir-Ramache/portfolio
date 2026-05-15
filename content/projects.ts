@@ -23,12 +23,13 @@ export const PROJECTS: Project[] = [
     title: "Rihlaty",
     year: "2026",
     description:
-      "My graduation project at the University of Constantine 2: compare travel offers from verified agencies in one place — discovery, agency tiers, and traveler-focused UX. Next.js client, Django REST API, Supabase for the database, and Cloudinary for images. Built with two other developers.",
+      "My graduation project at the University of Constantine 2: compare travel offers from verified agencies in one place — discovery, agency tiers, AI-powered recommendations, and traveler-focused UX. Next.js client, Django REST API, Supabase for the database, and Cloudinary for images. Built with two other developers.",
     tags: [...RIHLATY_TECH_TAGS],
     liveHref: RIHLATY_LIVE_URL,
     imageSrc: "/images/projects/rihlaty.png",
     imageSrcMobile: "/images/projects/rihlaty-phone.png",
-    imageAlt: "Rihlaty homepage — compare travel offers from verified agencies",
+    imageAlt:
+      "Rihlaty homepage — compare travel offers and AI recommendations from verified agencies",
     featured: true,
     featuredBadge: "Graduation project · team of 3 · live",
   },

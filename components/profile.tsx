@@ -60,7 +60,7 @@ function Profile() {
             frontend, and Django, NestJS, or Node.js when the project needs APIs
             or server-side work. Fifth-year student at the University of
             Constantine 2 — currently focused on my graduation project, Rihlaty
-            (Django, Supabase, Cloudinary).
+            (Django, Supabase, Cloudinary, AI recommendations).
           </m.p>
 
           <div className="mt-10 flex flex-wrap gap-4">
