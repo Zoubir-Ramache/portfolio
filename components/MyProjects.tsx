@@ -10,6 +10,8 @@ type Project = {
   liveHref?: string;
   repoHref?: string;
   imageSrc?: string;
+  /** Shown below `md` when set; `imageSrc` is used from `md` and up. */
+  imageSrcMobile?: string;
   imageAlt?: string;
   featured?: boolean;
   featuredBadge?: string;
@@ -31,6 +33,9 @@ const PROJECTS: Project[] = [
       "Graduation project",
     ],
     liveHref: "https://rihlaty-client.vercel.app/",
+    imageSrc: "/images/projects/rihlaty.png",
+    imageSrcMobile: "/images/projects/rihlaty-phone.png",
+    imageAlt: "Rihlaty homepage — compare travel offers from verified agencies",
     featured: true,
     featuredBadge: "Graduation project · team of 3 · live",
   },
@@ -89,7 +94,20 @@ function MyProjects() {
                 project.featured ? "h-80 md:h-96" : "h-72"
               }`}
             >
-              {project.imageSrc ? (
+              {project.imageSrc && project.imageSrcMobile ? (
+                <picture className="absolute inset-0 block h-full w-full">
+                  <source
+                    media="(min-width: 768px)"
+                    srcSet={project.imageSrc}
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={project.imageSrcMobile}
+                    alt={project.imageAlt ?? project.title}
+                    className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-[1.02] md:object-cover"
+                  />
+                </picture>
+              ) : project.imageSrc ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={project.imageSrc}

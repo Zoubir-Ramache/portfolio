@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { motion as m } from "framer-motion";
 import { useStateContext } from "../Context/FirstProvider";
 
+const RIHLATY_LIVE_URL = "https://rihlaty-client.vercel.app/";
+
 function Profile() {
   const { setLoading, loading } = useStateContext();
 
@@ -46,6 +48,23 @@ function Profile() {
             </span>
             experiences.
           </h1>
+
+          <m.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={loading ? {} : { opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mt-8"
+          >
+            <div className="relative inline-block">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500/35 to-purple-500/35 opacity-70 blur-lg" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/RAMACHE_ZOUBIR.png"
+                alt="Zoubir Ramache"
+                className="relative h-32 w-32 rounded-2xl border border-white/10 object-cover shadow-xl md:h-40 md:w-40"
+              />
+            </div>
+          </m.div>
 
           <m.p
             initial={{ opacity: 0, y: 12 }}
@@ -108,7 +127,7 @@ function Profile() {
                 </p>
               </div>
               <a
-                href="https://rihlaty-client.vercel.app/"
+                href={RIHLATY_LIVE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-sm text-emerald-400 transition hover:bg-emerald-500/20"
@@ -117,14 +136,19 @@ function Profile() {
               </a>
             </div>
 
-            <div className="relative mx-auto mb-8 aspect-square max-h-[280px] max-w-[280px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-800 to-zinc-950">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/RAMACHE_ZOUBIR.png"
-                alt="Zoubir Ramache"
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <a
+              href={RIHLATY_LIVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative mb-8 block overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-blue-500/15 via-purple-500/10 to-zinc-950 px-6 py-12 text-center transition hover:border-white/20"
+            >
+              <span className="text-sm font-medium text-zinc-200 transition group-hover:text-white">
+                Compare travel offers — live app
+              </span>
+              <span className="mt-2 block text-xs text-zinc-500">
+                rihlaty-client.vercel.app
+              </span>
+            </a>
 
             <div className="flex flex-wrap gap-3">
               {[
