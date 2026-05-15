@@ -20,8 +20,16 @@ const PROJECTS: Project[] = [
     title: "Rihlaty",
     year: "2026",
     description:
-      "My graduation project at the University of Constantine 2: compare travel offers from verified agencies in one place — discovery, agency tiers, and traveler-focused UX. Built with two other developers.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Graduation project"],
+      "My graduation project at the University of Constantine 2: compare travel offers from verified agencies in one place — discovery, agency tiers, and traveler-focused UX. Next.js client, Django REST API, Supabase for the database, and Cloudinary for images. Built with two other developers.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Django",
+      "Supabase",
+      "Cloudinary",
+      "Tailwind CSS",
+      "Graduation project",
+    ],
     liveHref: "https://rihlaty-client.vercel.app/",
     featured: true,
     featuredBadge: "Graduation project · team of 3 · live",

@@ -41,8 +41,8 @@ function AboutMe() {
           </p>
           <ul className="list-inside list-disc space-y-2 text-zinc-400">
             <li>
-              Next.js and React for UIs; NestJS or Node.js when I am on APIs or
-              backend pieces
+              Next.js and React for UIs; Django (Rihlaty), NestJS, or Node.js
+              when I am on APIs or backend pieces
             </li>
             <li>Tailwind CSS and component-driven layouts</li>
             <li>Shipping real features on a multi-developer graduation project</li>

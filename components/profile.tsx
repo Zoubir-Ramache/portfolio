@@ -54,9 +54,10 @@ function Profile() {
             className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400"
           >
             Developer building clean web experiences — Next.js and React on the
-            frontend, and NestJS or Node.js when the project needs APIs or
-            server-side work. Fifth-year student at the University of Constantine
-            2 — currently focused on my graduation project, Rihlaty.
+            frontend, and Django, NestJS, or Node.js when the project needs APIs
+            or server-side work. Fifth-year student at the University of
+            Constantine 2 — currently focused on my graduation project, Rihlaty
+            (Django, Supabase, Cloudinary).
           </m.p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -129,6 +130,9 @@ function Profile() {
               {[
                 "Next.js",
                 "TypeScript",
+                "Django",
+                "Supabase",
+                "Cloudinary",
                 "Tailwind CSS",
                 "Graduation project",
               ].map(
