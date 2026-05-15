@@ -1,6 +1,7 @@
 "use client";
 
 import { motion as m } from "framer-motion";
+import { RIHLATY_LIVE_URL } from "@/content/rihlaty";
 
 function AboutMe() {
   return (
@@ -28,7 +29,7 @@ function AboutMe() {
             </strong>
             . Most of my energy right now goes into{" "}
             <a
-              href="https://rihlaty-client.vercel.app/"
+              href={RIHLATY_LIVE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline decoration-white/30 underline-offset-4 transition hover:decoration-white"

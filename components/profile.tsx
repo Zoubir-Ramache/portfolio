@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 import { motion as m } from "framer-motion";
-import { useStateContext } from "../Context/FirstProvider";
-
-const RIHLATY_LIVE_URL = "https://rihlaty-client.vercel.app/";
+import RihlatySpotlight from "@/components/RihlatySpotlight";
+import { useStateContext } from "@/Context/FirstProvider";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 function Profile() {
   const { setLoading, loading } = useStateContext();
@@ -12,22 +12,6 @@ function Profile() {
   useEffect(() => {
     setLoading(false);
   }, [setLoading]);
-
-  const scrollToProjects = () => {
-    const el = document.getElementById("projects");
-    if (!el) return;
-    const top =
-      el.getBoundingClientRect().top + window.scrollY - 88;
-    window.scrollTo({ top, behavior: "smooth" });
-  };
-
-  const scrollToContact = () => {
-    const el = document.getElementById("contact");
-    if (!el) return;
-    const top =
-      el.getBoundingClientRect().top + window.scrollY - 88;
-    window.scrollTo({ top, behavior: "smooth" });
-  };
 
   return (
     <section
@@ -82,14 +66,14 @@ function Profile() {
           <div className="mt-10 flex flex-wrap gap-4">
             <button
               type="button"
-              onClick={scrollToProjects}
+              onClick={() => scrollToSection("projects")}
               className="rounded-2xl bg-white px-7 py-4 font-semibold text-black shadow-2xl shadow-white/10 transition hover:scale-[1.02] active:scale-[0.98]"
             >
               View projects
             </button>
             <button
               type="button"
-              onClick={scrollToContact}
+              onClick={() => scrollToSection("contact")}
               className="rounded-2xl border border-white/10 bg-white/5 px-7 py-4 font-medium text-white transition hover:bg-white/10"
             >
               Contact
@@ -112,66 +96,7 @@ function Profile() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-r from-blue-500/25 to-purple-500/25 blur-2xl" />
-
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-            <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
-              <div>
-                <p className="text-sm text-zinc-500">Graduation project</p>
-                <h3 className="mt-1 text-2xl font-bold text-white">Rihlaty</h3>
-                <p className="mt-2 max-w-xs text-sm text-zinc-400">
-                  Travel marketplace to compare offers from verified agencies —
-                  my final-year project at Constantine 2, built with two other
-                  developers.
-                </p>
-              </div>
-              <a
-                href={RIHLATY_LIVE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-sm text-emerald-400 transition hover:bg-emerald-500/20"
-              >
-                Live
-              </a>
-            </div>
-
-            <a
-              href={RIHLATY_LIVE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative mb-8 block overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-blue-500/15 via-purple-500/10 to-zinc-950 px-6 py-12 text-center transition hover:border-white/20"
-            >
-              <span className="text-sm font-medium text-zinc-200 transition group-hover:text-white">
-                Compare travel offers — live app
-              </span>
-              <span className="mt-2 block text-xs text-zinc-500">
-                rihlaty-client.vercel.app
-              </span>
-            </a>
-
-            <div className="flex flex-wrap gap-3">
-              {[
-                "Next.js",
-                "TypeScript",
-                "Django",
-                "Supabase",
-                "Cloudinary",
-                "Tailwind CSS",
-                "Graduation project",
-              ].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-white/10 bg-black/40 px-4 py-2 text-sm text-zinc-300"
-                  >
-                    {tech}
-                  </span>
-                )
-              )}
-            </div>
-          </div>
-        </div>
+        <RihlatySpotlight />
       </div>
     </section>
   );

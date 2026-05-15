@@ -1,67 +1,8 @@
 "use client";
 
 import { motion as m } from "framer-motion";
-
-type Project = {
-  title: string;
-  year: string;
-  description: string;
-  tags: string[];
-  liveHref?: string;
-  repoHref?: string;
-  imageSrc?: string;
-  /** Shown below `md` when set; `imageSrc` is used from `md` and up. */
-  imageSrcMobile?: string;
-  imageAlt?: string;
-  featured?: boolean;
-  featuredBadge?: string;
-};
-
-const PROJECTS: Project[] = [
-  {
-    title: "Rihlaty",
-    year: "2026",
-    description:
-      "My graduation project at the University of Constantine 2: compare travel offers from verified agencies in one place — discovery, agency tiers, and traveler-focused UX. Next.js client, Django REST API, Supabase for the database, and Cloudinary for images. Built with two other developers.",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Django",
-      "Supabase",
-      "Cloudinary",
-      "Tailwind CSS",
-      "Graduation project",
-    ],
-    liveHref: "https://rihlaty-client.vercel.app/",
-    imageSrc: "/images/projects/rihlaty.png",
-    imageSrcMobile: "/images/projects/rihlaty-phone.png",
-    imageAlt: "Rihlaty homepage — compare travel offers from verified agencies",
-    featured: true,
-    featuredBadge: "Graduation project · team of 3 · live",
-  },
-  {
-    title: "Facebook-style app",
-    year: "2023",
-    description:
-      "Next.js social-style UI experiment optimized for small screens.",
-    tags: ["Next.js", "React"],
-    repoHref: "https://github.com/remmachezoubir/Facebook_app.git",
-    liveHref: "https://facebook-app-alpha.vercel.app/",
-    imageSrc: "/images/projects/Screenshot from 2023-07-06 14-33-23.png",
-    imageAlt: "Facebook app preview",
-  },
-  {
-    title: "Audio notes",
-    year: "2023",
-    description:
-      "React and Tailwind app for capturing and organizing voice notes.",
-    tags: ["React", "Tailwind CSS"],
-    repoHref: "https://github.com/remmachezoubir/o-notes.git",
-    liveHref: "https://o-notes.vercel.app/",
-    imageSrc: "/images/projects/Screenshot from 2023-07-09 00-40-36.png",
-    imageAlt: "Audio notes app preview",
-  },
-];
+import ProjectCardMedia from "@/components/ProjectCardMedia";
+import { PROJECTS } from "@/content/projects";
 
 function MyProjects() {
   return (
@@ -89,41 +30,14 @@ function MyProjects() {
               project.featured ? "lg:col-span-2" : ""
             }`}
           >
-            <div
-              className={`relative overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-950 ${
-                project.featured ? "h-80 md:h-96" : "h-72"
-              }`}
-            >
-              {project.imageSrc && project.imageSrcMobile ? (
-                <picture className="absolute inset-0 block h-full w-full">
-                  <source
-                    media="(min-width: 768px)"
-                    srcSet={project.imageSrc}
-                  />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.imageSrcMobile}
-                    alt={project.imageAlt ?? project.title}
-                    className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-[1.02] md:object-cover"
-                  />
-                </picture>
-              ) : project.imageSrc ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={project.imageSrc}
-                  alt={project.imageAlt ?? project.title}
-                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 via-purple-500/10 to-transparent" />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 transition duration-500 group-hover:opacity-100" />
-              {project.featured && project.featuredBadge && (
-                <div className="absolute left-6 top-6 rounded-full border border-white/15 bg-black/50 px-4 py-1 text-xs font-medium text-zinc-200 backdrop-blur-md">
-                  {project.featuredBadge}
-                </div>
-              )}
-            </div>
+            <ProjectCardMedia
+              title={project.title}
+              imageSrc={project.imageSrc}
+              imageSrcMobile={project.imageSrcMobile}
+              imageAlt={project.imageAlt}
+              featured={project.featured}
+              featuredBadge={project.featuredBadge}
+            />
 
             <div className="p-8">
               <div className="flex flex-wrap items-center justify-between gap-4">
@@ -149,7 +63,7 @@ function MyProjects() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                {project.liveHref && (
+                {project.liveHref ? (
                   <a
                     href={project.liveHref}
                     target="_blank"
@@ -158,8 +72,8 @@ function MyProjects() {
                   >
                     View live
                   </a>
-                )}
-                {project.repoHref && (
+                ) : null}
+                {project.repoHref ? (
                   <a
                     href={project.repoHref}
                     target="_blank"
@@ -168,7 +82,7 @@ function MyProjects() {
                   >
                     GitHub
                   </a>
-                )}
+                ) : null}
               </div>
             </div>
           </m.article>
