@@ -1,33 +1,81 @@
-[My Portfolio Website]
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Zoubir Ramache — Portfolio
 
-## Getting Started
+Personal portfolio website showcasing projects, skills, and contact information. Built with Next.js and a dark, motion-driven UI.
 
-First, run the development server:
+**Live site:** [ramache-zoubir.vercel.app](https://ramache-zoubir.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Features
+
+- **Hero** — Introduction with availability status and featured project spotlight (Rihlaty)
+- **Projects** — Featured and archived work with live demos, repos, and responsive previews
+- **About** — Background and current focus
+- **Tech stack** — Tools and technologies used day to day
+- **Contact** — Email and social links (GitHub, LinkedIn, Instagram, Facebook)
+
+## Tech stack
+
+| Category | Tools |
+|----------|-------|
+| Framework | [Next.js 13](https://nextjs.org/) (App Router) |
+| Language | [TypeScript](https://www.typescriptlang.org/) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/), [DaisyUI](https://daisyui.com/) |
+| Animation | [Framer Motion](https://www.framer.com/motion/) |
+| State | [Zustand](https://zustand-demo.pmnd.rs/) |
+| Icons | [React Icons](https://react-icons.github.io/react-icons/) |
+
+## Project structure
+
+```
+├── app/              # Next.js App Router (layout, page, global styles)
+├── components/       # UI sections (NavBar, Profile, MyProjects, etc.)
+├── content/          # Shared data (projects, Rihlaty copy and URLs)
+├── Context/          # React context (loading state)
+├── lib/              # Utilities (scroll helpers)
+└── public/           # Static assets (images, favicon)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project data lives in `content/projects.ts`. To add or edit a project, update the `PROJECTS` array there.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Getting started
 
-## Learn More
+**Prerequisites:** Node.js 18+ and npm.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start the development server
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Create production build |
+| `npm run start` | Serve production build |
+| `npm run lint` | Run ESLint |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployment
+
+The site is live on Vercel: [https://ramache-zoubir.vercel.app/](https://ramache-zoubir.vercel.app/)
+
+To deploy your own fork, connect the repository to [Vercel](https://vercel.com/) (or any platform that supports Next.js) and use the default build settings:
+
+- **Build command:** `npm run build`
+- **Output:** Next.js default
+
+## Author
+
+**Zoubir Ramache** — Web developer from Algeria
+
+- GitHub: [@Zoubir-Ramache](https://github.com/Zoubir-Ramache/)
+- LinkedIn: [zoubir-ramache](https://www.linkedin.com/in/zoubir-ramache-04189a25b)
+- Email: [ramachezoubir@gmail.com](mailto:ramachezoubir@gmail.com)
+
+## License
+
+Private project — all rights reserved.
