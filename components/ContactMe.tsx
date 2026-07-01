@@ -47,15 +47,15 @@ export default function ContactMe() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="rounded-[3rem] border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-10 text-center md:p-16"
+        className="rounded-[3rem] border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-10 text-center md:p-16 backdrop-blur-md shadow-2xl shadow-indigo-500/10"
       >
-        <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+        <p className="text-sm uppercase tracking-[0.3em] text-slate-500">
           Contact
         </p>
         <h2 className="mt-6 text-4xl font-black leading-tight text-white md:text-6xl">
           Let&apos;s build something meaningful.
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
           Open to freelance work, collaborations, and teams that care about
           craft. Reach out by email or connect on social.
         </p>
@@ -63,7 +63,7 @@ export default function ContactMe() {
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a
             href="mailto:ramachezoubir@gmail.com"
-            className="rounded-2xl bg-white px-8 py-4 font-semibold text-black transition hover:scale-[1.02]"
+            className="rounded-2xl bg-white px-8 py-4 font-semibold text-slate-950 transition hover:scale-[1.02]"
           >
             Email me
           </a>
@@ -84,7 +84,7 @@ export default function ContactMe() {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-sm text-zinc-300 transition hover:border-white/20 hover:text-white"
+              className="flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/40 backdrop-blur-sm px-4 py-2 text-sm text-slate-300 transition hover:border-white/20 hover:text-white hover:bg-slate-800/60"
             >
               <Icon className="text-lg" />
               {name}

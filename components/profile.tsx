@@ -20,14 +20,14 @@ function Profile() {
     >
       <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
         <div>
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-400">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-400">
             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
             Available for freelance work
           </div>
 
           <h1 className="text-5xl font-black leading-tight tracking-tight text-white md:text-7xl">
             Building
-            <span className="block bg-gradient-to-r from-white to-zinc-500 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-white to-slate-500 bg-clip-text text-transparent">
               modern digital
             </span>
             experiences.
@@ -40,7 +40,7 @@ function Profile() {
             className="mt-8"
           >
             <div className="relative inline-block">
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500/35 to-purple-500/35 opacity-70 blur-lg" />
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500/35 to-purple-500/35 opacity-70 blur-lg" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/RAMACHE_ZOUBIR.png"
@@ -54,7 +54,7 @@ function Profile() {
             initial={{ opacity: 0, y: 12 }}
             animate={loading ? {} : { opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400"
+            className="mt-8 max-w-xl text-lg leading-relaxed text-slate-400"
           >
             Developer building clean web experiences — Next.js and React on the
             frontend, and Django, NestJS, or Node.js when the project needs APIs
@@ -67,7 +67,7 @@ function Profile() {
             <button
               type="button"
               onClick={() => scrollToSection("projects")}
-              className="rounded-2xl bg-white px-7 py-4 font-semibold text-black shadow-2xl shadow-white/10 transition hover:scale-[1.02] active:scale-[0.98]"
+              className="rounded-2xl bg-white px-7 py-4 font-semibold text-slate-950 shadow-2xl shadow-white/10 transition hover:scale-[1.02] active:scale-[0.98]"
             >
               View projects
             </button>
@@ -80,7 +80,7 @@ function Profile() {
             </button>
           </div>
 
-          <div className="mt-16 flex flex-wrap gap-10 text-sm text-zinc-500">
+          <div className="mt-16 flex flex-wrap gap-10 text-sm text-slate-500">
             <div>
               <h3 className="text-3xl font-bold text-white">3+</h3>
               <p>Shipped projects</p>

@@ -1,4 +1,4 @@
-import { SiNestjs, SiTailwindcss } from "react-icons/si";
+import { SiNestjs, SiTailwindcss, SiFlutter } from "react-icons/si";
 import {
   BiLogoCss3,
   BiLogoReact,
@@ -30,6 +30,7 @@ export const SKILLS_LIST: SkillItem[] = [
   { name: "Java", Icon: BiLogoJava },
   { name: "Git", Icon: BsGit },
   { name: "Linux", Icon: VscTerminalLinux },
+  { name: "Flutter", Icon: SiFlutter },
 ];
 
 export default function Skills() {

@@ -8,7 +8,7 @@ function AboutMe() {
     <section id="about" className="mx-auto max-w-7xl px-6 py-28">
       <div className="grid items-center gap-16 lg:grid-cols-2">
         <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+          <p className="text-sm uppercase tracking-[0.3em] text-slate-500">
             About me
           </p>
           <h2 className="mt-5 text-4xl font-black leading-tight text-white md:text-5xl">
@@ -20,11 +20,11 @@ function AboutMe() {
           initial={{ opacity: 0, x: 16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="space-y-6 text-lg leading-relaxed text-zinc-400"
+          className="space-y-6 text-lg leading-relaxed text-slate-400"
         >
           <p>
             I am a web developer from Algeria in my fifth year at the{" "}
-            <strong className="font-semibold text-zinc-200">
+            <strong className="font-semibold text-slate-200">
               University of Constantine 2
             </strong>
             . Most of my energy right now goes into{" "}
@@ -40,7 +40,7 @@ function AboutMe() {
             from verified agencies and get AI-powered trip recommendations. I
             build it together with two other developers.
           </p>
-          <ul className="list-inside list-disc space-y-2 text-zinc-400">
+          <ul className="list-inside list-disc space-y-2 text-slate-400">
             <li>
               Next.js and React for UIs; Django (Rihlaty), NestJS, or Node.js
               when I am on APIs or backend pieces

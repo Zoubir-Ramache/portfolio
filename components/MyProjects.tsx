@@ -26,7 +26,7 @@ function MyProjects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: index * 0.06 }}
-            className={`group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] transition hover:border-white/20 ${
+            className={`group overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/40 backdrop-blur-md transition hover:border-white/20 hover:bg-slate-900/60 shadow-2xl shadow-black/20 ${
               project.featured ? "lg:col-span-2" : ""
             }`}
           >
@@ -44,10 +44,10 @@ function MyProjects() {
                 <h3 className="text-2xl font-bold text-white">
                   {project.title}
                 </h3>
-                <span className="text-sm text-zinc-500">{project.year}</span>
+                <span className="text-sm text-slate-500">{project.year}</span>
               </div>
 
-              <p className="mt-4 leading-relaxed text-zinc-400">
+              <p className="mt-4 leading-relaxed text-slate-400">
                 {project.description}
               </p>
 
@@ -55,7 +55,7 @@ function MyProjects() {
                 {project.tags.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-white/10 px-3 py-2 text-sm text-zinc-300"
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-300"
                   >
                     {tech}
                   </span>
@@ -68,7 +68,7 @@ function MyProjects() {
                     href={project.liveHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.02]"
+                    className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:scale-[1.02]"
                   >
                     View live
                   </a>
