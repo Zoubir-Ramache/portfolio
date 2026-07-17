@@ -1,4 +1,4 @@
-import { SiNestjs, SiTailwindcss, SiFlutter } from "react-icons/si";
+import { SiNestjs, SiTailwindcss, SiFlutter, SiDart } from "react-icons/si";
 import {
   BiLogoCss3,
   BiLogoReact,
@@ -18,32 +18,66 @@ export type SkillItem = {
   Icon: IconType;
 };
 
-export const SKILLS_LIST: SkillItem[] = [
-  { name: "JavaScript", Icon: BiLogoJavascript },
-  { name: "React", Icon: BiLogoReact },
-  { name: "Next.js", Icon: TbBrandNextjs },
-  { name: "TypeScript", Icon: BiLogoTypescript },
-  { name: "CSS", Icon: BiLogoCss3 },
-  { name: "Tailwind CSS", Icon: SiTailwindcss },
-  { name: "Node.js", Icon: BiLogoNodejs },
-  { name: "NestJS", Icon: SiNestjs },
-  { name: "Java", Icon: BiLogoJava },
-  { name: "Git", Icon: BsGit },
-  { name: "Linux", Icon: VscTerminalLinux },
-  { name: "Flutter", Icon: SiFlutter },
+export type SkillCategory = {
+  title: string;
+  skills: SkillItem[];
+};
+
+export const SKILLS_BY_CATEGORY: SkillCategory[] = [
+  {
+    title: "Mobile Stack",
+    skills: [
+      { name: "Flutter", Icon: SiFlutter },
+      { name: "Dart", Icon: SiDart },
+    ],
+  },
+  {
+    title: "Web & Frontend",
+    skills: [
+      { name: "JavaScript", Icon: BiLogoJavascript },
+      { name: "TypeScript", Icon: BiLogoTypescript },
+      { name: "React", Icon: BiLogoReact },
+      { name: "Next.js", Icon: TbBrandNextjs },
+      { name: "CSS", Icon: BiLogoCss3 },
+      { name: "Tailwind CSS", Icon: SiTailwindcss },
+    ],
+  },
+  {
+    title: "Backend & Server",
+    skills: [
+      { name: "Node.js", Icon: BiLogoNodejs },
+      { name: "NestJS", Icon: SiNestjs },
+      { name: "Java", Icon: BiLogoJava },
+    ],
+  },
+  {
+    title: "Tools & Systems",
+    skills: [
+      { name: "Git", Icon: BsGit },
+      { name: "Linux", Icon: VscTerminalLinux },
+    ],
+  },
 ];
+
+export const SKILLS_LIST: SkillItem[] = SKILLS_BY_CATEGORY.flatMap(
+  (category) => category.skills
+);
 
 export default function Skills() {
   return (
-    <div>
-      <h2 className="card-title text-primary-content underline">
-        my skills :
-      </h2>
-      <div className="flex w-full flex-wrap justify-around gap-2 px-8 py-2 text-lg font-bold capitalize">
-        {SKILLS_LIST.map(({ name, Icon }) => (
-          <SingleSkill name={name} Icon={Icon} key={name} />
-        ))}
-      </div>
+    <div className="space-y-8">
+      {SKILLS_BY_CATEGORY.map((category) => (
+        <div key={category.title}>
+          <h3 className="text-xl font-bold text-slate-400 mb-4 capitalize">
+            {category.title}
+          </h3>
+          <div className="flex w-full flex-wrap gap-2 px-4 py-2 text-lg font-bold capitalize">
+            {category.skills.map(({ name, Icon }) => (
+              <SingleSkill name={name} Icon={Icon} key={name} />
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

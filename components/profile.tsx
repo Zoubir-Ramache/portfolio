@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { motion as m } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
 import RihlatySpotlight from "@/components/RihlatySpotlight";
 import { useStateContext } from "@/Context/FirstProvider";
 import { scrollToSection } from "@/lib/scrollToSection";
@@ -71,10 +72,18 @@ function Profile() {
             >
               View projects
             </button>
+            <a
+              href="/RamacheZoubirCV.pdf"
+              download="RamacheZoubirCV.pdf"
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-7 py-4 font-medium text-white transition hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <FiDownload className="h-5 w-5 text-zinc-400" />
+              Download CV
+            </a>
             <button
               type="button"
               onClick={() => scrollToSection("contact")}
-              className="rounded-2xl border border-white/10 bg-white/5 px-7 py-4 font-medium text-white transition hover:bg-white/10"
+              className="rounded-2xl border border-white/10 bg-white/5 px-7 py-4 font-medium text-white transition hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98]"
             >
               Contact
             </button>

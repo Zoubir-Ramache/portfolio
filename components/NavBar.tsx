@@ -51,13 +51,22 @@ function NavBar() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          onClick={() => scrollToId("contact")}
-          className="rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition hover:scale-[1.02] active:scale-[0.98]"
-        >
-          Hire me
-        </button>
+        <div className="flex items-center gap-3">
+          <a
+            href="/RamacheZoubirCV.pdf"
+            download="RamacheZoubirCV.pdf"
+            className="rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Download CV
+          </a>
+          <button
+            type="button"
+            onClick={() => scrollToId("contact")}
+            className="rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Hire me
+          </button>
+        </div>
       </div>
     </m.header>
   );
