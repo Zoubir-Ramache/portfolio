@@ -23,11 +23,11 @@ function AboutMe() {
           className="space-y-6 text-lg leading-relaxed text-slate-400"
         >
           <p>
-            I am a web developer from Algeria in my fifth year at the{" "}
+            I am a web developer from Algeria and a graduate of the{" "}
             <strong className="font-semibold text-slate-200">
               University of Constantine 2
             </strong>
-            . Most of my energy right now goes into{" "}
+            . Much of my recent focus has been on{" "}
             <a
               href={RIHLATY_LIVE_URL}
               target="_blank"
@@ -38,7 +38,7 @@ function AboutMe() {
             </a>
             , my graduation project — a platform where travelers compare offers
             from verified agencies and get AI-powered trip recommendations. I
-            build it together with two other developers.
+            built it in collaboration with two other developers.
           </p>
           <ul className="list-inside list-disc space-y-2 text-slate-400">
             <li>
@@ -46,7 +46,7 @@ function AboutMe() {
               when I am on APIs or backend pieces
             </li>
             <li>Tailwind CSS and component-driven layouts</li>
-            <li>Shipping real features on a multi-developer graduation project</li>
+            <li>Shipped key features on a team-based graduation project</li>
           </ul>
         </m.div>
       </div>

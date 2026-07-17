@@ -22,7 +22,7 @@ function Profile() {
         <div>
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-400">
             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-            Available for freelance work
+            Open to remote & on-site work
           </div>
 
           <h1 className="text-5xl font-black leading-tight tracking-tight text-white md:text-7xl">
@@ -58,8 +58,8 @@ function Profile() {
           >
             Developer building clean web experiences — Next.js and React on the
             frontend, and Django, NestJS, or Node.js when the project needs APIs
-            or server-side work. Fifth-year student at the University of
-            Constantine 2 — currently focused on my graduation project, Rihlaty
+            or server-side work. Graduate from the University of
+            Constantine 2 — recently completed my graduation project, Rihlaty
             (Django, Supabase, Cloudinary, AI recommendations).
           </m.p>
 
@@ -87,7 +87,7 @@ function Profile() {
             </div>
             <div>
               <h3 className="text-3xl font-bold text-white">5</h3>
-              <p>Years at university</p>
+              <p>Years of study</p>
             </div>
             <div>
               <h3 className="text-3xl font-bold text-white">100%</h3>

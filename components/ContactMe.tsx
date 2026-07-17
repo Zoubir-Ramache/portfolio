@@ -56,8 +56,8 @@ export default function ContactMe() {
           Let&apos;s build something meaningful.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
-          Open to freelance work, collaborations, and teams that care about
-          craft. Reach out by email or connect on social.
+          Open to full-time roles, remote or on-site opportunities, collaborations, and teams
+          that care about craft. Reach out by email or connect on social.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
