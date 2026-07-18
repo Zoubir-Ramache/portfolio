@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing projects, skills, and contact information. Built with Next.js and a dark, motion-driven UI.
 
-**Live site:** [ramache-zoubir.vercel.app](https://ramache-zoubir.vercel.app/)
+**Live site:** [zoubir.online](https://zoubir.online/)
 
 ## Features
 
@@ -61,7 +61,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deployment
 
-The site is live on Vercel: [https://ramache-zoubir.vercel.app/](https://ramache-zoubir.vercel.app/)
+The site is live on Vercel: [https://zoubir.online/](https://zoubir.online/)
 
 To deploy your own fork, connect the repository to [Vercel](https://vercel.com/) (or any platform that supports Next.js) and use the default build settings:
 
